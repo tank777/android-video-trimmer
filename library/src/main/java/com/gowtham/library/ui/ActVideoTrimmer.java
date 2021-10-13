@@ -214,8 +214,10 @@ public class ActVideoTrimmer extends LocalizationActivity {
             Runnable fileUriRunnable = () -> {
                 uri = Uri.parse(bundle.getString(TrimVideo.TRIM_VIDEO_URI));
 //              String path = FileUtils.getPath(ActVideoTrimmer.this, uri);
-                String path=FileUtils.getRealPath(ActVideoTrimmer.this,uri);
-                uri = Uri.parse(path);
+                if (!trimVideoOptions.isRealPath) {
+                    String path = FileUtils.getRealPath(ActVideoTrimmer.this,uri);
+                    uri = Uri.parse(path);
+                }
                 runOnUiThread(() -> {
                     LogMessage.v("VideoUri:: " + uri);
                     progressBar.setVisibility(View.GONE);

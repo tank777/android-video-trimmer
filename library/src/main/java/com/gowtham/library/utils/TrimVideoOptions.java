@@ -22,6 +22,8 @@ public class TrimVideoOptions {
 
     public CompressOption compressOption;
 
+    public boolean isRealPath;
+
     public TrimVideoOptions() {
     }
 

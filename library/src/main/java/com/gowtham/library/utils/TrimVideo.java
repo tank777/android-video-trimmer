@@ -93,6 +93,11 @@ public class TrimVideo {
             return this;
         }
 
+        public ActivityBuilder isRealPath(@NonNull boolean isRealPath) {
+            options.isRealPath = isRealPath;
+            return this;
+        }
+
         public void start(Activity activity,
                           ActivityResultLauncher<Intent> launcher) {
             validate();
